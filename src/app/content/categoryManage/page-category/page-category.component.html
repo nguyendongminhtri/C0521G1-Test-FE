@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12" style="margin-top: 20px">
+            <mat-card style="margin: 50px 0">
+                <div class="row">
+                    <div class="column" *ngFor="let ctg of categorys">
+                        <button [routerLink]="['/update-category/',ctg.id]" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+                            <mat-icon color="primary">edit</mat-icon>
+                        </button>
+                        <button (click)="openDialog(ctg.id)" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+                            <mat-icon color="warn">delete</mat-icon>
+                        </button>
+                        <div class="card">
+                            <i style="font-size: 2vw; color: #f92672">{{ctg.nameCategory}}</i>
+                            <img class="img" [src]="ctg.avatarCategory">
+                        </div>
+                    </div>
+                </div>
+                <mat-paginator [length]="totalElements"
+                               [pageSizeOptions]="[3, 9, 90]"
+                               aria-label="Select page"
+                               (page)="nextPage($event)">
+                </mat-paginator>
+
+            </mat-card>
+        </div>
+    </div>
+</div>

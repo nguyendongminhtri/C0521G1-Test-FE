@@ -10,6 +10,12 @@
   <a *ngIf="!checkLogin" mat-button class="docs-button" routerLink="login" aria-label="Angular Material">
     <span>Login</span>
   </a>
+  <a mat-button class="docs-button" routerLink="create-category" aria-label="Angular Material">
+    <span>Create Category</span>
+  </a>
+  <a mat-button class="docs-button" routerLink="page-category" aria-label="Angular Material">
+    <span>Page Category</span>
+  </a>
   <a *ngIf="checkLogin" mat-button class="docs-button" routerLink="user-account" aria-label="Angular Material">
     <mat-icon color="accent" matPrefix>account_circle</mat-icon>
     <span>{{name}}</span>
