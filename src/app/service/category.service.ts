@@ -29,4 +29,7 @@ export class CategoryService {
   deleteCategory(id: number): Observable<Category>{
     return this.http.delete<Category>(this.API_CATEGORY+'/'+id)
   }
+  getListCategory(): Observable<Category[]>{
+    return this.http.get<Category[]>(this.API_CATEGORY+'/list')
+  }
 }

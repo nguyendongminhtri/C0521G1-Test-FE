@@ -40,6 +40,8 @@ import {MatPaginatorModule} from "@angular/material/paginator";
 import { UpdateCategoryComponent } from './content/categoryManage/update-category/update-category.component';
 import { DialogComponent } from './content/categoryManage/dialog/dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
+import { ListCategoryComponent } from './content/categoryManage/list-category/list-category.component';
+import {MatTableModule} from "@angular/material/table";
 
 export const appRoutes: Routes = [
     {path: '', component: HomeComponent, data: {title: 'Home'}},
@@ -49,6 +51,7 @@ export const appRoutes: Routes = [
     {path: 'create-category', component: CreateCategoryComponent},
     {path: 'page-category', component: PageCategoryComponent},
     {path: 'update-category/:id', component: UpdateCategoryComponent},
+    {path: 'list-category', component: ListCategoryComponent},
     {
         path: 'guide/getting-started',
         component: GettingStartedComponent,
@@ -57,7 +60,7 @@ export const appRoutes: Routes = [
 ];
 
 @NgModule({
-    declarations: [AppComponent, HomeComponent, GettingStartedComponent, RegisterComponent, LoginComponent, UserAccountComponent, UploadAvatarComponent, CreateCategoryComponent, PageCategoryComponent, UpdateCategoryComponent, DialogComponent],
+    declarations: [AppComponent, HomeComponent, GettingStartedComponent, RegisterComponent, LoginComponent, UserAccountComponent, UploadAvatarComponent, CreateCategoryComponent, PageCategoryComponent, UpdateCategoryComponent, DialogComponent, ListCategoryComponent],
     imports: [
         FormsModule,
         MatInputModule,
@@ -75,7 +78,7 @@ export const appRoutes: Routes = [
         NgxAudioPlayerModule,
         AngularFireStorageModule,
         AngularFireModule.initializeApp(environment.firebaseConfig),
-        RouterModule.forRoot(appRoutes, {useHash: false}), MatFormFieldModule, ReactiveFormsModule, MatProgressSpinnerModule, MatPaginatorModule, MatDialogModule
+        RouterModule.forRoot(appRoutes, {useHash: false}), MatFormFieldModule, ReactiveFormsModule, MatProgressSpinnerModule, MatPaginatorModule, MatDialogModule, MatTableModule
     ],
     providers: [httpInterceptorProvider],
     bootstrap: [AppComponent]
